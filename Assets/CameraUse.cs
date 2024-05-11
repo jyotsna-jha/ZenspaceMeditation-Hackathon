@@ -5,33 +5,28 @@ using UnityEngine;
 public class CameraUse : MonoBehaviour
 {
     public GameObject PlaneObject;
+    public float distanceFromCamera = 1f; // Distance from the camera
 
-void Start () {
-        //this is checking for device!
-		if(Application.isMobilePlatform)
-        {
-            GameObject cameraParent = new GameObject("camParent");
-            cameraParent.transform.position = this.transform.position;
-            this.transform.parent = cameraParent.transform; 
-            cameraParent.transform.Rotate(Vector3.right, 90); //This is for rotation of camera.
-        }
+    private GameObject obj;
 
+    void Start()
+    {
+        // Create the object in front of the camera
+        obj = Instantiate(PlaneObject, transform.position + transform.forward * distanceFromCamera, Quaternion.identity);
+        obj.transform.LookAt(transform); // Make the object face the camera
 
-Input.gyro.enabled = true; // enabling the gyro sensor of your device make sure that your device has a gyro sensor!
-
-        //In this part we are place camera texture on the plane object that we create!
-       
-	WebCamTexture webCameraTexture = new WebCamTexture();
-        PlaneObject.GetComponent<MeshRenderer>().material.mainTexture = 	webCameraTexture;
+        // Set up the webcam texture on the plane object
+        WebCamTexture webCameraTexture = new WebCamTexture();
+        obj.GetComponent<MeshRenderer>().material.mainTexture = webCameraTexture;
         webCameraTexture.Play();
-	}
-	
-// Update is called once per frame
-	
-void Update () {
-		//It is for camera rotation of gyro sensor!
-        Quaternion cameraRotation = new Quaternion(Input.gyro.attitude.x, Input.gyro.attitude.y,
-            -Input.gyro.attitude.z, -Input.gyro.attitude.w);
-        this.transform.localRotation = cameraRotation;
-	}
+    }
+
+    void Update()
+    {
+        // Move the object along with the camera
+        obj.transform.position = transform.position + transform.forward * distanceFromCamera;
+        
+        // Rotate the object to match the camera's rotation
+        obj.transform.rotation = Quaternion.LookRotation(transform.forward, transform.up);
+    }
 }
