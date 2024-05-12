@@ -25,8 +25,11 @@ public class CameraUse : MonoBehaviour
     {
         // Move the object along with the camera
         obj.transform.position = transform.position + transform.forward * distanceFromCamera;
+
+        // Calculate the rotation difference between the object and the camera
+        Quaternion rotationDifference = Quaternion.Inverse(transform.rotation) * obj.transform.rotation;
         
-        // Rotate the object to match the camera's rotation
-        obj.transform.rotation = Quaternion.LookRotation(transform.forward, transform.up);
+        // Apply the same rotation difference to the object to keep it facing the same direction as the camera
+        obj.transform.rotation = transform.rotation * rotationDifference;
     }
 }

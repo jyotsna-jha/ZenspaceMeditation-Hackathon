@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.15761521, g: 0.18115878, b: 0.1967962, a: 1}
+  m_IndirectSpecularColor: {r: 0.13998418, g: 0.15305565, b: 0.14915577, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,8 +132,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 96541353}
-  - component: {fileID: 96541354}
   - component: {fileID: 96541355}
+  - component: {fileID: 96541354}
   m_Layer: 6
   m_Name: Camera Offset
   m_TagString: MainCamera
@@ -164,7 +164,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96541352}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -406,6 +406,7 @@ GameObject:
   - component: {fileID: 389222672}
   - component: {fileID: 389222671}
   - component: {fileID: 389222670}
+  - component: {fileID: 389222674}
   m_Layer: 6
   m_Name: Sphere6
   m_TagString: Untagged
@@ -499,6 +500,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &389222674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389222669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6717e660920a4804fa8eadb0c7e30efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowMaterials:
+  - {fileID: 2100000, guid: beeeb6df297142e42b4cc499b7f51fbc, type: 2}
+  - {fileID: 2100000, guid: 5f640a3ca2397e840972934045fd7524, type: 2}
+  - {fileID: 2100000, guid: 28a3abc9758e73348ad7fa533c9d8896, type: 2}
+  - {fileID: 2100000, guid: 42dd41bc8bb60ff449027d6ecd3d82f3, type: 2}
+  - {fileID: 2100000, guid: 9fdd6b5f8254cbf45b93f7f5cfe8adab, type: 2}
+  - {fileID: 2100000, guid: ce6f1edd61cef5943b1c5cb3576a4963, type: 2}
+  - {fileID: 2100000, guid: 77f9557b4e464c84baf95a792748d19f, type: 2}
+  glowIntensityIncrement: 20
+  glowDuration: 10
+  delayBetweenGlow: 10
 --- !u!1 &536300753
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,13 +880,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.9959194, y: -0.040172026, z: 0.069652796, w: 0.040979404}
+  m_LocalRotation: {x: 0.9713551, y: -0.050567195, z: -0.23059969, w: 0.027130457}
   m_LocalPosition: {x: 2.01, y: 0.93, z: 9.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 5.004, y: -187.814, z: -175.722}
+  m_LocalEulerAnglesHint: {x: 1.684, y: -153.197, z: -173.639}
 --- !u!1 &943242878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +1089,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 38257bc60fc67c04fac635ee1fb3fd5b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2c6c04941698d13419e5ee246142501a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1160,7 +1184,7 @@ Transform:
   m_GameObject: {fileID: 1156845639}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -5.029}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1186,7 +1210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4add18bb456e91043b2b7f7d6310426e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 38257bc60fc67c04fac635ee1fb3fd5b, type: 3}
+  audioClip: {fileID: 8300000, guid: 2c6c04941698d13419e5ee246142501a, type: 3}
 --- !u!1 &1410243348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,7 +1310,7 @@ Transform:
   m_GameObject: {fileID: 1410243348}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: 0.459, z: 0.274}
+  m_LocalPosition: {x: -0.08, y: 0.459, z: 0.274}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1409,6 +1433,7 @@ GameObject:
   - component: {fileID: 1538933274}
   - component: {fileID: 1538933273}
   - component: {fileID: 1538933272}
+  - component: {fileID: 1538933276}
   m_Layer: 6
   m_Name: Sphere3
   m_TagString: Untagged
@@ -1502,6 +1527,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1538933276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538933271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26722664cfc6f5643beb801c1f7aeaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1543622187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,7 +1571,7 @@ Transform:
   m_GameObject: {fileID: 1543622187}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000007799827, y: -0.00067561865, z: -0.0000000055879354, w: -0.9999998}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.05, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
